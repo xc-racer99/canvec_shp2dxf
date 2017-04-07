@@ -1,0 +1,23 @@
+ISOM 2000,ISOM 2007,Code,Text Representation,Definition
+406,406,20,Not Identified,"Unknown, not listed, not applicable or impossible to determine."
+406,406,678,No Data,Absence of data.
+406,406,679,Unclassified,"The coverage is unclassified due to cloud, shadow or other image quality factors."
+406,406,680,Cloud,The coverage is under clouds
+406,406,681,Shadow,The coverage is shadowed
+407,407,682,Shrubland,"Predominantly woody vegetation of relatively low height (generally 2 metres ±). May include grass or grassland, wetlands with woody vegetation, regenerating forest"
+409,409,683,Shrub Tall,"At least 20% ground cover which is at least one-third shrub. Average shrub height greater than or equal to 2 m. In the North, moist to wet erect tall shrub > 40 cm forming more than 25% of the vegetated cover, consisting mainly of dwarf birch (Betula), willow (Salix) and / or alder (Alnus). Remaining cover consists of graminoids, lichen and may contain < 10% prostrate dwarf shrubs and bare soil."
+407,407,684,Shrub Low,"At least 20% ground cover which is at least one-third shrub. Average shrub height is less than 2 m. In the North, Moist erect low shrub < 40 cm forming more than 25% of the vegetated cover, consisting mainly of dwarf birch (Betula) and / or willow (Salix). Remaining cover consists of graminoids, lichen and may contain prostrate dwarf shrubs and bare soil."
+408,408,685,Wetland Treed,"Land with a water table near/at/above soil surface for enough time to promote wetland or aquatic processes. The majority of vegetation is coniferous, broadleaf, or mixed wood."
+406,406,686,Forest-Subclass Unknown,"Predominantly forested or treed areas. This value is used only if the distinction of sub-forest covers (coniferous, deciduous or mixed forest) is not possible"
+406,406,687,Coniferous Forest,Predominantly coniferous forests or treed areas. May include mixed forests and shrubland areas.
+410,410,688,Coniferous Dense,Greater than 60% crown closure. Coniferous trees are 75% or more of total basal area.
+408,408,689,Coniferous Open,26-60% crown closure. Coniferous trees are 75% or more of total basal area.
+406,406,690,Coniferous Sparse,10-25% crown closure. Coniferous trees are 75% or more of total basal area.
+406,406,691,Deciduous Forest,Predominantly broadleaf/deciduous forests or treed areas. May include mixed forests and shrubland areas.
+410,410,692,Broadleaf Dense,Greater than 60% crown closure. Broadleaf trees are 75% or more of total basal area.
+408,408,693,Broadleaf Open,26-60% crown closure. Broadleaf trees are 75% or more of total basal area.
+406,406,694,Broadleaf Sparse,10-25% crown closure; broadleaf trees are 75% or more of total basal area.
+406,406,695,Mixed Forest,Mixed coniferous and broadleaf/deciduous forests or treed areas.
+410,410,696,Mixed Wood Dense,Greater than 60% crown closure. Neither coniferous nor broadleaf tree account for 75% or more of total basal area.
+408,408,697,Mixed Wood Open,26-60% crown closure. Neither coniferous nor broadleaf tree account for 75% or more of total basal area.
+406,406,698,Mixed Wood Sparse,10-25% crown closure. Neither coniferous nor broadleaf tree account for 75% or more of total basal area.

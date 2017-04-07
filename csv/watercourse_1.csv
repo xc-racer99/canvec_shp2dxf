@@ -1,0 +1,15 @@
+ISOM 2000,ISOM 2007,Code,Text Representation,Definition
+306,305,20,Not Identified,"Unknown, not listed, not applicable or impossible to determine."
+305,304,79,Canal,An artificial body of water serving as a navigable waterway or to channel water.
+306,305,80,Conduit,"An artificial system, such as an aqueduct, penstock, flume, or sluice, designed to carry water for purposes other than drainage."
+306,305,81,Ditch,"Small, open man-made channel constructed through earth or rock for the purpose of conveying water."
+306,305,82,Diversion,Diverted water drainage.
+305,304,83,Lake,Inland natural flat body of water.
+305,304,84,Liquid Waste,Artificial open-sky basin used to collect liquid waste such as from an industrial complex.
+305,304,85,Ocean,Coastal waterbody.
+305,304,86,Pond,"A body of standing water, usually smaller than a lake."
+305,304,87,Reservoir,A wholly or partially man-made body of water for storing or regulating and controlling water.
+305,304,88,Side Channel,A channel providing an alternative water way within a flowing body of water.
+305,304,89,Tidal River,A natural body of water in which flow and water surface elevation are affected by the tide.
+FALSE,FALSE,90,Underground Connection,A man-made underground water connection.
+306,305,91,Watercourse,A natural body of water through which water may flow.

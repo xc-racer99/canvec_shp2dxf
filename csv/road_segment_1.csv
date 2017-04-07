@@ -1,0 +1,18 @@
+ISOM 2000,ISOM 2007,Code,Text Representation,Definition
+503,502,20,Not Identified,"Unknown, not listed, not applicable or impossible to determine."
+504,503,307,Alleyway-Lane,Low-speed thoroughfare designed to provide access to the rear of properties.
+502,502,308,Arterial,Major thoroughfare with medium to large traffic capacity.
+502,502,309,Collector,Minor thoroughfare mainly used to access properties and to feed traffic with right of way.
+501.5,502,310,Expressway-Highway,High-speed thoroughfare with a combination of controlled access intersections at any grade.
+501.5,502,311,Freeway,"Unimpeded, high-speed controlled access thoroughfare for through traffic with typically no at-grade intersections, usually with no property access or direct access, and which is accessed by a ramp. Pedestrians are prohibited."
+503,502,312,Local-Strata,"Low-speed thoroughfare dedicated to provide access to properties with potential public restriction such as: trailer parks, First Nations, strata, private estates, seasonal residences."
+503,502,313,Local-Street,Low-speed thoroughfare dedicated to provide full access to the front of properties.
+503,502,314,Local-Unknown,Low-speed thoroughfare dedicated to provide access to the front of properties but for which the access regulations are unknown.
+503,502,315,Ramp,System of interconnecting roadways providing for the controlled movement between two or more roadways.
+503,502,316,Rapid Transit,Thoroughfare restricted to public transit buses.
+505,504,317,Resource-Recreation Cart Track,Minimally maintained rudimentary road only suitable for all-terrain vehicles.
+505,504,318,Resource-Recreation Dry Weather,Road whose surface is suitable for traffic other than all-terrain vehicles only in dry weather.
+505,504,319,Ressource-Recreation Other,Road whose surface is suitable for resource and recreation uses other than dry weather or cart track.
+505,504,320,Ressource-Recreation Unknown,Road whose surface is suitable for resource and recreation uses but for which the specific use is unknown.
+504,503,321,Service Lane,"Stretch of road along a freeway or highway allowing vehicles to come to a stop. Its uses include: weighing, service lane, emergency lane, lookout, and rest area."
+FALSE,FALSE,322,Winter,"Road useable in wintertime only when conditions allow for passage over frozen lakes, rivers, and wetlands."
