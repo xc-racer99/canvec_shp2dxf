@@ -56,7 +56,7 @@ foreach my $file (@shpfiles) {
 
 	my $ourindex = -1;
 
-	for (my $i = 0; $i < $#bdarray; $i++) {
+	for (my $i = 0; $i <= $#bdarray; $i++) {
 		if ($filename eq $bdarray[$i][0]) {
 			$ourindex = $i;
 			last;
@@ -73,17 +73,66 @@ foreach my $file (@shpfiles) {
 		next;
 	} elsif ($bdarray[$ourindex][1] eq "NAME") {
 		# Convert to DXF, use the generic CRT
-		system("ogr2ogr -skipfailures -f DXF $ARGV[0]-DXF/$filename.dxf $file -sql 'SELECT map_sel_en AS Layer FROM $filename' -t_srs $epsg -dsco HEADER=header.dxf");
+		system("ogr2ogr -skipfailures -f DXF $ARGV[0]-DXF/$filename.dxf $file -sql 'SELECT map_sel_en AS Layer FROM $filename' -t_srs $epsg -dsco HEADER=header.dxf -nln $filename");
 		copy "Common.crt", "$ARGV[0]-DXF/$filename.crt";
 	} else {
 		# Convert to DXF, use a custom CRT
+		my @wanted_entries = getFilteredEntries($filename);
+		my $where_string;
+
+		for my $entries (@wanted_entries) {
+			$where_string .= "$bdarray[$ourindex][1] = $entries OR ";
+		}
+
+		# Remove the extra "OR " from the end of the where string
+		$where_string = substr $where_string, 0, (length $where_string) - 3;
+
+		system("ogr2ogr -skipfailures -f DXF $ARGV[0]-DXF/$filename.dxf $file -sql 'SELECT $bdarray[$ourindex][1] AS Layer FROM $filename WHERE $where_string' -t_srs $epsg -dsco HEADER=header.dxf");
+		createCustomCRT($filename);
 	}
 }
 
 sub createCustomCRT {
+	my ($filename) = @_;
 
+	my $csvfile = "csv/$filename.csv";
+	open(my $csvdata, '<', $csvfile) or die "Couldn't find $csvfile";
+
+	my $crtfile = "$ARGV[0]-DXF/$filename.crt";
+	open(my $crtdata, '>', $crtfile) or die "Couldn't open $crtfile for writing";
+
+	while (my $line = <$csvdata>) {
+		chomp $line;
+
+		my @fields = split "," , $line;
+
+		if ($fields[$custom_isom_offset] ne "FALSE" and $fields[$custom_isom_offset] !~ "ISOM") {
+			print $crtdata "$fields[$custom_isom_offset] $fields[2]\n";
+		}
+	}
+
+	close $crtdata;
+	close $csvdata;
+	return 0;
 }
 
 sub getFilteredEntries {
+	my ($filename) = @_;
+	my @entries = ();
 
+	my $csvfile = "csv/$filename.csv";
+	open(my $csvdata, '<', $csvfile) or die "Couldn't find $csvfile";
+
+	while (my $line = <$csvdata>) {
+		chomp $line;
+
+		my @fields = split "," , $line;
+
+		if ($fields[$custom_isom_offset] ne "FALSE" and $fields[$custom_isom_offset] !~ "ISOM") {
+			push @entries, $fields[2];
+		}
+	}
+
+	close $csvdata;
+	return @entries;
 }
