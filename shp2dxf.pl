@@ -73,8 +73,12 @@ foreach my $file (@shpfiles) {
 		next;
 	} elsif ($bdarray[$ourindex][1] eq "NAME") {
 		# Convert to DXF, use the generic CRT
-		system("ogr2ogr -skipfailures -f DXF $ARGV[0]-DXF/$filename.dxf $file -sql 'SELECT map_sel_en AS Layer FROM $filename' -t_srs $epsg -dsco HEADER=header.dxf -nln $filename");
-		copy "Common.crt", "$ARGV[0]-DXF/$filename.crt";
+		system("ogr2ogr -skipfailures -f DXF $ARGV[0]-DXF/$filename.dxf $file -t_srs $epsg -dsco HEADER=header.dxf");
+	#	copy "Common.crt", "$ARGV[0]-DXF/$filename.crt";
+		my $crt_file = "$ARGV[0]-DXF/$filename.crt";
+		open(my $crtdata, '>', $crt_file) or die "Couldn't open $crt_file for writing";
+		print $crtdata "$bdarray[$ourindex][2] 0";
+		close $crtdata;
 	} else {
 		# Convert to DXF, use a custom CRT
 		my @wanted_entries = getFilteredEntries($filename);
