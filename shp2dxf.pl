@@ -8,9 +8,13 @@ if (!defined $ARGV[1]) {
 
 use File::Copy qw(copy);
 
-# Setup the offsets for the ISOM codes
+# Setup the offsets for the ISOM codes - depends on if we want ISOM 2017 or not
 my $common_isom_offset = 2;
 my $custom_isom_offset = 0;
+if (defined $ARGV[2] and $ARGV[2] eq "2017") {
+	$common_isom_offset = 3;
+	$custom_isom_offset = 1;
+}
 
 # Setup projection
 my $epsg = "EPSG:$ARGV[1]";
@@ -42,7 +46,7 @@ open(my $common_crt, '>', $common_crt_file) or die "Couldn't open $common_crt_fi
 
 for (my $i = 0; $i < $#bdarray; $i++) {
 	if ($bdarray[$i][1] eq "NAME" ) {
-		print $common_crt $bdarray[$i][$common_isom_offset] . " " . $bdarray[$i][0] . "\n";
+		print $common_crt $bdarray[$i][2] . " " . $bdarray[$i][0] . "\n";
 	}
 }
 close $common_crt;
