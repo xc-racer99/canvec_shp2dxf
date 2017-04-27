@@ -1,0 +1,14 @@
+OBTAINING DATA
+--------------
+You can take the data from http://geogratis.gc.ca/site/eng/extraction  Under select your data, select all the topographic data.  Choose to have the data in shapefiles and at the 1:50,000 scale.
+
+
+USAGE
+-----
+To use this program, run "perl shp2dxf.pl dirName EPSGCode" where dirName is the directory you've extracted the shapefiles and EPSGCode is the EPSG number you want the DXF files created with.
+For example, run "perl shp2dxf.pl canvec 32611" to convert the shapefiles in the canvec directory with the UTM 11N projection.
+Optionally, you can add "2017" to the end if you want to create CRT files for the new mapping standard.
+
+MODIFYING SYMBOL MAPPING
+------------------------
+All the symbol mapping is saved in CSV files (stored in the csv directory).  BaseNames.csv is the main file to edit.  The first column is the filename.  The second is whether to use this symbol or not - if it is FALSE, then we don't use this file, if it is NAME, then everything is mapped to the symbol in the third/fourth column.  Otherwise, it is the name of an attribute that determines which is then read.  There will be another file called {filename}.csv which contains a mapping between the attribute and the ISOM symbol set.
